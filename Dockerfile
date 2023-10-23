@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
 
-CMD ["nano", "/dog-cat.txt"]
+CMD ["nano", "dog-cat.txt"]
 
 
