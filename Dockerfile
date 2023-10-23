@@ -1,6 +1,6 @@
 FROM ubuntu:lucid
 
 
-CMD echo "Hello, cat-dog test" 
+CMD echo "Hello, cat-dog test2" 
 
 
