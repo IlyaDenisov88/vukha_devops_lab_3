@@ -1,6 +1,6 @@
 FROM ubuntu:lucid
 
 
-COPY ./dog-cat.txt . 
+CMD echo "Hello, cat-dog testing" 
 
 
