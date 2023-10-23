@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
 
-CMD echo "Hello, cat-dog test2" 
+CMD ["nano", "/dog-cat.txt"]
 
 
