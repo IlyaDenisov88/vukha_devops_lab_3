@@ -1,10 +1,10 @@
-FROM python:3
+FROM ubuntu:lucid
 
 WORKDIR /calc
 
 COPY . /calc
 
-CMD ["python3", "myoopcalc.py"]
+CMD ["bash", "dog.bash"]
 
 
 
