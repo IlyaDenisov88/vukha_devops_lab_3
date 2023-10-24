@@ -1,60 +1,60 @@
-import tkinter as tk
-from tkinter import messagebox
+import tkinter
+#from tkinter import messagebox
 
 
 class Calculator:
     def __init__(self):
-        self.win = tk.Tk()
+        self.win = tkinter.Tk()
 
         self.win.title('Calc')
         self.win.geometry("600x300+100+200")  # размеры окна и отступы от верхнего
         # левого угла экрана
-        self.lab1 = tk.Label(self.win, text='Number1: ')
-        self.lab2 = tk.Label(self.win, text='Number2: ')
+        self.lab1 = tkinter.Label(self.win, text='Number1: ')
+        self.lab2 = tkinter.Label(self.win, text='Number2: ')
         self.lab1.grid(row=1, column=0)
         self.lab2.grid(row=1, column=2)
-        self.entry1 = tk.Entry(self.win)
-        self.entry2 = tk.Entry(self.win)
+        self.entry1 = tkinter.Entry(self.win)
+        self.entry2 = tkinter.Entry(self.win)
         self.entry1.grid(row=1, column=1)
         self.entry2.grid(row=1, column=3)
-        self.pluscond = tk.BooleanVar()
+        self.pluscond = tkinter.BooleanVar()
         self.pluscond.set(False)
-        self.plus = tk.Checkbutton(self.win, text='+',
+        self.plus = tkinter.Checkbutton(self.win, text='+',
                                    variable=self.pluscond)
-        self.minuscond = tk.BooleanVar()
+        self.minuscond = tkinter.BooleanVar()
         self.minuscond.set(False)
-        self.minus = tk.Checkbutton(self.win, text='-',
+        self.minus = tkinter.Checkbutton(self.win, text='-',
                                     variable=self.minuscond)
-        self.multicond = tk.BooleanVar()
+        self.multicond = tkinter.BooleanVar()
         self.multicond.set(False)
-        self.multi = tk.Checkbutton(self.win, text='*',
+        self.multi = tkinter.Checkbutton(self.win, text='*',
                                     variable=self.multicond)
-        self.divcond = tk.BooleanVar()
+        self.divcond = tkinter.BooleanVar()
         self.divcond.set(False)
-        self.div = tk.Checkbutton(self.win, text='/',
+        self.div = tkinter.Checkbutton(self.win, text='/',
                                   variable=self.divcond)
-        self.percond = tk.BooleanVar()
+        self.percond = tkinter.BooleanVar()
         self.percond.set(False)
-        self.per = tk.Checkbutton(self.win, text='Пер',
+        self.per = tkinter.Checkbutton(self.win, text='Пер',
                                   variable=self.percond)
-        self.ploshcond = tk.BooleanVar()
+        self.ploshcond = tkinter.BooleanVar()
         self.ploshcond.set(False)
-        self.plosh = tk.Checkbutton(self.win, text='Пл',
+        self.plosh = tkinter.Checkbutton(self.win, text='Пл',
                                     variable=self.ploshcond)
-        self.lab3 = tk.Label(self.win, text='Выберите операции: ')
+        self.lab3 = tkinter.Label(self.win, text='Выберите операции: ')
         self.lab3.grid(row=2, column=0)
         self.plus.grid(row=2, column=1)
         self.minus.grid(row=2, column=2)
         self.multi.grid(row=3, column=1)
         self.div.grid(row=3, column=2)
 
-        self.count = tk.Button(self.win, text='Вычислить!', command=self.calculate)
-        self.select = tk.Button(self.win, text='Выбрать всё!', command=self.select_all)
-        self.clear_nums = tk.Button(self.win, text='Очистить поля!', command=self.clear_num)
-        self.clear = tk.Button(self.win, text='Очистить выбор!', command=self.clear_all)
-        self.rect = tk.Button(self.win, text='Нарисовать прямоугольник', command=self.print_rect)
-        self.leave = tk.Button(self.win, text='Выйти', command=self.quite)
-        self.change_places = tk.Button(self.win, text='Поменять местами', command=self.change)
+        self.count = tkinter.Button(self.win, text='Вычислить!', command=self.calculate)
+        self.select = tkinter.Button(self.win, text='Выбрать всё!', command=self.select_all)
+        self.clear_nums = tkinter.Button(self.win, text='Очистить поля!', command=self.clear_num)
+        self.clear = tkinter.Button(self.win, text='Очистить выбор!', command=self.clear_all)
+        self.rect = tkinter.Button(self.win, text='Нарисовать прямоугольник', command=self.print_rect)
+        self.leave = tkinter.Button(self.win, text='Выйти', command=self.quite)
+        self.change_places = tkinter.Button(self.win, text='Поменять местами', command=self.change)
         self.count.grid(row=5, column=2)
         self.clear.grid(row=5, column=0)
         self.select.grid(row=5, column=1)
@@ -62,22 +62,22 @@ class Calculator:
         self.rect.grid(row=6, column=1)
         self.leave.grid(row=7, column=2)
         self.change_places.grid(row=6, column=2)
-        self.c = tk.Canvas(self.win, width=100, height=100)
+        self.c = tkinter.Canvas(self.win, width=100, height=100)
         self.c.grid(row=8, column=0)
-        self.var = tk.IntVar()
+        self.var = tkinter.IntVar()
         self.var.set(0)
-        self.rad1 = tk.Radiobutton(self.win, text='Калькулятор', variable=self.var, value=0,
+        self.rad1 = tkinter.Radiobutton(self.win, text='Калькулятор', variable=self.var, value=0,
                                    command=self.select_type)
-        self.rad2 = tk.Radiobutton(self.win, text='Прямоугольник', variable=self.var, value=1,
+        self.rad2 = tkinter.Radiobutton(self.win, text='Прямоугольник', variable=self.var, value=1,
                                    command=self.select_type)
         self.rad1.grid(row=0, column=0)
         self.rad2.grid(row=0, column=1)
-        self.res = tk.Label(self.win)
-        self.menu = tk.Menu(self.win)
-        self.file = tk.Menu(self.menu)
+        self.res = tkinter.Label(self.win)
+        self.menu = tkinter.Menu(self.win)
+        self.file = tkinter.Menu(self.menu)
         self.file.add_command(label='Выход', command=self.quite)
         self.menu.add_cascade(label='Файл', menu=self.file)
-        self.operations = tk.Menu(self.menu)
+        self.operations = tkinter.Menu(self.menu)
         self.operations.add_command(label='Поменять местами', command=self.change)
         self.operations.add_command(label='Очистить поля', command=self.clear_num)
         self.operations.add_command(label='Очистить выбор', command=self.clear_all)
@@ -85,7 +85,7 @@ class Calculator:
         self.operations.add_command(label='Выбрать все', command=self.select_all)
         self.operations.add_command(label='Нарисовать прямоугольник', command=self.print_rect)
         self.menu.add_cascade(label='Операции', menu=self.operations)
-        self.info = tk.Menu(self.menu)
+        self.info = tkinter.Menu(self.menu)
         self.info.add_command(label='Информация', command=self.watch_info)
         self.menu.add_cascade(label='Справка', menu=self.info)
         self.win.config(menu=self.menu)
@@ -175,8 +175,8 @@ class Calculator:
                 cond.set(False)
 
     def clear_num(self):
-        self.entry1.delete(0, tk.END)
-        self.entry2.delete(0, tk.END)
+        self.entry1.delete(0, tkinter.END)
+        self.entry2.delete(0, tkinter.END)
         self.res.config(text='')
 
     def print_rect(self):
@@ -192,9 +192,9 @@ class Calculator:
     def change(self):
         f = self.entry1.get()
         s = self.entry2.get()
-        self.entry1.delete(0, tk.END)
+        self.entry1.delete(0, tkinter.END)
         self.entry1.insert(0, s)
-        self.entry2.delete(0, tk.END)
+        self.entry2.delete(0, tkinter.END)
         self.entry2.insert(0, f)
     def watch_info(self):
         pass
