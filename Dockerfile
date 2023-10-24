@@ -1,8 +1,8 @@
 FROM python:3.10
 
-WORKDIR /calc
+WORKDIR /app
 
-COPY . /calc
+COPY . /app
 
 CMD ["python3", "printer.py"]
 
