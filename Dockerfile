@@ -4,7 +4,6 @@ WORKDIR /calc
 
 COPY . /calc
 
-CMD ["bash", "dog.bash"]
 
 
 
