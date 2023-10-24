@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-CMD ["python3", "printer.py"]
+CMD ["python", "printer.py"]
 
 
 
