@@ -1,10 +1,10 @@
-FROM ubuntu:lucid
+FROM python:3.10
 
 WORKDIR /calc
 
 COPY . /calc
 
-CMD echo "I am ready"
+CMD ["python3", "printer.py"]
 
 
 
