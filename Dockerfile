@@ -1,6 +1,6 @@
 FROM python:3
 
-RUN pip install --upgrade pip && pip install -r my_project/setting/requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 WORKDIR /calc
 
