@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-CMD ["python", "printer.py"]
+RUN sh printer.py
 
 
 
