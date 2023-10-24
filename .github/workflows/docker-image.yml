@@ -19,4 +19,4 @@ jobs:
     - name: Push the Docker image
       run: docker login -u krokodile888 -p ${{ secrets.DOCKER_TOKEN }} && docker push krokodile888/dogcat:latest
     - name: Copy file to the repository
-      run: docker run --rm -d -v ~/krokodile888/dogcat/log:/log -v ~/krokodile888/dogcat/data:/data --name dogcat krokodile888/dogcat:latest
+      run: docker run --rm -d -v ~/krokodile888/dogcat/numbers.txt:/numbers.txt --name dogcat krokodile888/dogcat:latest
