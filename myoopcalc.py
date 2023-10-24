@@ -1,4 +1,4 @@
-import tkinter as tk
+'''import tkinter as tk
 from tkinter import messagebox
 
 
@@ -206,4 +206,6 @@ class Calculator:
         self.win.quit()
 
 
-c = Calculator()
+c = Calculator()'''
+
+print('hello')
