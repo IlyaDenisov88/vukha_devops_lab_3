@@ -4,7 +4,9 @@ WORKDIR /app
 
 COPY . /app
 
-RUN sh printer.py
+CMD ["python", "printer.py"]
+
+RUN cat numbers.txt
 
 
 
