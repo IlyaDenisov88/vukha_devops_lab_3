@@ -18,5 +18,5 @@ jobs:
       run: docker build . --file Dockerfile --tag krokodile888/dogcat:latest
     - name: Push the Docker image
       run: docker login -u krokodile888 -p ${{ secrets.DOCKER_TOKEN }} && docker push krokodile888/dogcat:latest
-    #- name: Copy file to the repository
-     # run: docker run -d -v ~/krokodile888/dogcat/numbers.txt:/numbers.txt --name dogcat krokodile888/dogcat:latest
+    - name: Copy file to the repository
+      run: docker run -d -v ~/app/numbers.txt:/vukha_devops_lab_3/numbers.txt --name dogcat krokodile888/dogcat:latest
